@@ -1,7 +1,7 @@
 # 命令行
 ## 清屏命令
 - cls: cmd 清屏
-- reset: git 清屏
+- clear / reset: Linux 清屏
 ## Linux基本命令
 Linux中以 . 开头的文件/文件夹为隐藏文件/文件夹
 - pwd : 查看当前目录;
