@@ -1,0 +1,34 @@
+# 文件路径匹配模式 globs
+- \* : 在一个字符串片段中匹配任意数量的字符, eg: '*.js'
+    - 匹配 index.js;
+    - 不匹配 scripts/index.js 或 scripts/nested/index.js;
+- \*\* : 在多个字符串片段中匹配任意数量的字符, eg: './scripts/\*\*/*.js' 
+    - 匹配 ./scripts/a.js;
+    - 匹配 ./scripts/lib/res.js;
+    - 匹配 ./scripts/mudules/b/a.js;
+- ? : 匹配一个字符，不会匹配路径分隔符, eg: '?.js'
+    - 能匹配文件名只有一个字符的js文件 a.js, b.js;
+    - 不能匹配文件名为2个字符及其以上的js的文件;
+- [...] : 由多个规则组成的数组，可以匹配数组中符合任意一个子项的文件，当子项中第一个字符为 ! 或 ^ 时，表示不匹配该规则; eg: './scripts/a[0-3].js'
+    - 匹配 scripts 目录下的 a0.js, a1.js, a2.js, a3.js;
+- {...} : 展开模式，根据里面的内容展开为多个规则，能匹配所有展开之后的规则; eg: ['./\*\*/\*.{html, php}', '!{build, simple, images, node_modules}/\*\*']
+    - 除开build,simple,images,node_modules目录;
+    - 匹配根目录下所有目录的html与php文件;
+- !(pattern|pattern|pattern) : 每一个规则用pattern表示，这里指排除符合这几个模式的所有文件; eg: './style/!(?|jquery).js'
+    - 匹配排除文件名为一个字符, 排除 jquery.js 的所有js文件;
+- ?(pattern|pattern|pattern) : 匹配括号中给定的任一模式0次或者1次; eg: './style/?(a|a2|b).js'
+    - 匹配style目录下的a.js, a2.js, b.js;
+    - 不能组合;
+    - 匹配0次或者1次;
+- @(pattern|pattern|pattern) : 匹配多个模式中的任一个; eg: './style/@(a|b|c).js'
+    - 匹配style目录下的a.js, b.js, c.js;
+    - 不能组合;
+    - 匹配一次，不能为空;
+- +(pattern|pattern|pattern) : 匹配括号中给定任一模式1次或者多次, 这几个模式可以组合在一起匹配; eg: './style/+(a|a2|b).js'
+    - 匹配style目录下的a.js, a2.js, b.js;
+    - 匹配他们的组合 ab.js, aa2.js, a2b.js等;
+    - 至少匹配一次;
+- *(pattern|pattern|pattern) : 匹配括号中给定任一模式0次或者多次, 这几个模式可以组合在一起匹配; eg: './style/\*(a|b|c).js'
+    - 匹配 style 目录下的 a.js, b.js, c.js;
+    - 匹配他们的组合 ab.js, bc.js, ac.js;
+    - 匹配0次或者多次;
