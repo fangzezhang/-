@@ -47,15 +47,15 @@
 > + 合并之前的commit, 4 表示最近的 4 次: git rebase -i HEAD~4 
 > + ![git-rebase-1](https://github.com/fangzezhang/Note/blob/main/static/image/%E5%91%BD%E4%BB%A4%E8%A1%8C/git%E7%9B%B8%E5%85%B3/git-rebase-1.png)
 > + ![git-rebase-2](https://github.com/fangzezhang/Note/blob/main/static/image/%E5%91%BD%E4%BB%A4%E8%A1%8C/git%E7%9B%B8%E5%85%B3/git-rebase-2.png)
-> + :wq 退出编辑
+> + :wq 保存并退出
 > + 遇到错误提示:
 > + ![错误提示](https://github.com/fangzezhang/Note/blob/main/static/image/%E5%91%BD%E4%BB%A4%E8%A1%8C/git%E7%9B%B8%E5%85%B3/git-rebase-3.png)
-> + 输入修改命令 git rebase --edit-todo:
+> + 输入 git rebase --edit-todo 进行修改:
 > + ![修改](https://github.com/fangzezhang/Note/blob/main/static/image/%E5%91%BD%E4%BB%A4%E8%A1%8C/git%E7%9B%B8%E5%85%B3/git-rebase-4.png)
-> + :wq 退出修改
+> + :wq 保存并退出
 > + 执行 git rebase --continue
 > + 完成 rebase 操作, 通过 git log 查看
-> + 强制提交修改: git push origin master --force
+> + 强制提交到远程分支: git push origin master --force
 > #### 撤销 rebase:
 > + 查看记录: git reflog 
 > + 完成撤销操作: git reset --hard HEAD@{XXX}
