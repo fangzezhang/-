@@ -31,7 +31,8 @@
 
 ### git stash 常用命令
 > + git stash list: 查看储藏栈;
-> + git stash: 可以将未完成的修改保存到一个栈上;
+> + git stash: 等同于"git stash push", 将未完成的修改保存到一个栈上;
+> + git stash push -m 'name': 保存的同时, 对 stash 添加描述;
 > + git stash apply 名字: 恢复指定的储藏，如果不指定储藏，默认最近的储藏;
 > + git stash drop 名字: 可以移除指定的储藏;
 > + git stash pop: 恢复储藏然后立即从栈上扔掉它;
