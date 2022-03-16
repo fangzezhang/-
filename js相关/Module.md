@@ -1,13 +1,14 @@
 # Module
 创建时间：2022-03-04
 
+[ES modules: A cartoon deep-dive](https://hacks.mozilla.org/2018/03/es-modules-a-cartoon-deep-dive/)
 ## EMS 和 CJS
 CJS(CommonJS): Node.js 使用的模块系统(旧)
 ESM(EcmaScript Modules): JS 规范中的模块系统(新)
 
 ## 不同点
 ### 算法执行阶段不同
-- CJS 只有一个阶段: Module loaded, instantiated, evaluated。
+- CJS 只有一个阶段: Module loaded, instantiated, evaluated。  
 ![module2](../static/image/js相关/module/module2.png)
 - ESM 分多个阶段: 将 Construction 阶段分离, 从而允许浏览器能够在实例化之前获取文件并建立 Module Graph。
 > - Construction: Find, download, parse all of files into **Module Records** (查找, 下载并解析文件).
