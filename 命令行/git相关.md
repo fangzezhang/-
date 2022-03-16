@@ -46,13 +46,13 @@
 ### git rebase 流程
 > + 查看本地commit记录: git log / git show 
 > + 合并之前的commit, 4 表示最近的 4 次: git rebase -i HEAD~4 
-> + ![git-rebase-1](https://github.com/fangzezhang/Note/blob/main/static/image/%E5%91%BD%E4%BB%A4%E8%A1%8C/git%E7%9B%B8%E5%85%B3/git-rebase-1.png)
-> + ![git-rebase-2](https://github.com/fangzezhang/Note/blob/main/static/image/%E5%91%BD%E4%BB%A4%E8%A1%8C/git%E7%9B%B8%E5%85%B3/git-rebase-2.png)
+> + ![git-rebase-1](../static/image/命令行/git相关/git-rebase-1.png)
+> + ![git-rebase-2](../static/image/命令行/git相关/git-rebase-2.png)
 > + :wq 保存并退出
 > + 遇到错误提示:
-> + ![错误提示](https://github.com/fangzezhang/Note/blob/main/static/image/%E5%91%BD%E4%BB%A4%E8%A1%8C/git%E7%9B%B8%E5%85%B3/git-rebase-3.png)
+> + ![错误提示](../static/image/命令行/git相关/git-rebase-3.png)
 > + 输入 git rebase --edit-todo 进行修改:
-> + ![修改](https://github.com/fangzezhang/Note/blob/main/static/image/%E5%91%BD%E4%BB%A4%E8%A1%8C/git%E7%9B%B8%E5%85%B3/git-rebase-4.png)
+> + ![修改](../static/image/命令行/git相关/git-rebase-4.png)
 > + :wq 保存并退出
 > + 执行 git rebase --continue
 > + 完成 rebase 操作, 通过 git log 查看
