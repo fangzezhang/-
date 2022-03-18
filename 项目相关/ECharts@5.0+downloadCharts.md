@@ -1,7 +1,7 @@
 # ECharts@5.x
 创建时间：2022-03-17
 
-### ECharts 升级到 5.x
+## ECharts 升级到 5.x
 - 由于 ECharts@5.x 使用 ESM 方式导出, 所以需要在 babel-loader 中增加对 echarts 和 zrender 的编译:
 ```javascript
 module: {
@@ -48,7 +48,7 @@ echarts.use([
 ]);
 
 ```
-### ECharts 下载 charts(兼容IE)
+## ECharts 下载 charts(兼容IE)
 #### print-打印机打印 charts
 ```javascript
 // 先将 body 中的其他元素 display: none, 只展示需要打印的 image;
