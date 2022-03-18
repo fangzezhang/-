@@ -1,11 +1,11 @@
 # Note
 整理有道云笔记中的笔记
 
-## [JS相关](./js相关/INDEX.md)
+## JS相关: [Index](./js相关/INDEX.md)
 ### [ES Module](./js相关/Module.md)
-## [TS相关](./ts相关/INDEX.md)
+## TS相关: [Index](./ts相关/INDEX.md)
 ### [TS总览](./ts相关/INDEX.md)
-## [命令行](./命令行)
+## 命令行: [Index](./命令行)
 ### [git相关](./命令行/git相关.md)
 ### [Linux+Nginx相关](./命令行/Linux+Nginx相关.md)
 ### [node+npm+yarn相关](./命令行/node+npm+yarn相关.md)
