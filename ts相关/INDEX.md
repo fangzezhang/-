@@ -58,9 +58,11 @@ type T21 = Bar<{ a: (x: string) => void; b: (x: number) => void }>; // string & 
 #### 变型(variance) 描述了类型和子类型之间的关系
 - 协变(covariant): 子类型 ≦ 基类型
 - 逆变(contravariant): 逆转了子类型序关系
-    > 通过一个数组类型构造器: Animal, 可以得到 Animal[]:  
-      协变: 一个 Cat[] 也是一个 Animal[];  
-      逆变: 一个 Animal[] 也是一个 Cat[];
+```typescript
+通过数组类型构造器: Animal, 得到 Animal[];  
+协变: 一个 Cat[] 也是一个 Animal[];  
+逆变: 一个 Animal[] 也是一个 Cat[];
+```
 #### 逆变和 TypeScript 的关系
 - TS 中方法的参数类型是双向协变, 即: 既是协变又是逆变, 不安全。
 - 解决方法: TypeScript@2.6 通过 --strictFunctionTypes 或 --strict 修复。
