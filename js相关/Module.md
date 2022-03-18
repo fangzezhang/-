@@ -43,12 +43,12 @@ import { count } from `${path}/counter.js`;
 import(`${path}/counter.js`);
 ```
 
-#### 导入内容不同
+### 导入内容不同
 - ESM 导入导出都是指向内存同一个位置, 所以导出模块 export 之后更改本模块的变量, 导入模块可以看到更改。
 - CJS 是导出时进行对整个导出对象进行复制, 所以导出模块在 exports 之后更改本模块的变量, 导入模块不会看到更改。
 
-#### 循环引入中不同
-##### ESM 循环引入  
+### 循环引入不同
+#### ESM 循环引入  
 - counter.js 同步访问 import 模块中的变量会报错;
 - counter.js 异步能够正常访问 import 模块中的变量。
 
@@ -78,7 +78,7 @@ export default {
 };
 ```
 
-##### CJS 循环引入
+#### CJS 循环引入
 - counter.js 同步访问 exports 出的变量: undefined;  
 - counter.js 异步访问 exports 出的变量: undefined | 正常值。  
 
@@ -113,7 +113,7 @@ exports.count = 5;
 每个模块都需要一个**模块实例(Module Instance)**。
 模块加载过程: 从入口文件开始, 通过 import 语句构建出一个完整的模块实例图。  
 
-#### 模块记录(Module Record)
+### 模块记录(Module Record)
 main.js
 ```javascript
 import { count } from './counter.js';
@@ -121,7 +121,7 @@ import { count } from './counter.js';
 浏览器通过入口文件(main.js), 经由 import 语句找到其余代码。
 但此时浏览器无法直接使用这些代码, 它需要将所有文件进行解析并转换为 **模块记录(Module Record)**。
 
-#### 模块实例(Module Instance)
+### 模块实例(Module Instance)
 **模块记录(Module Record)** 转换为 **模块实例(Module Instance)**。  
 一个实例包含 **code** 和 **state**。
 - code: 指令列表。
