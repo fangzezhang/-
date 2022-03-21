@@ -125,6 +125,8 @@ interface StringFormat {
 interface A<T> {
   a: T
 }
+
+let a: A<string> = { a: 'a' }
 ```
 - 扩展(extends): key 相同, 而属性描述不同时, 前面的属性描述要兼容后面的, 否则报错。
 ```typescript
