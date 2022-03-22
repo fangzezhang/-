@@ -137,7 +137,7 @@ img.onload = () => {
   let height = pdf.internal.pageSize.height;
 
   pdf.addImage(img, 'JPEG', 0, 0, width, height);
-  pdf.save('chart.pdf');
+  pdf.save('xxx.pdf');
 };
 ```
 #### 下载 csv
@@ -156,7 +156,7 @@ for (let i = 0; i < 10; i++) {
 const blob = new Blob([str], { type: 'text/csv;charset=utf-8;' });
 
 if (window.navigator.msSaveOrOpenBlob && window.Blob) {
-  window.navigator.msSaveOrOpenBlob(blob, `chart.csv`);
+  window.navigator.msSaveOrOpenBlob(blob, `xxx.csv`);
 
   return;
 }
