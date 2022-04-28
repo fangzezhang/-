@@ -44,9 +44,25 @@ npm version [\<newversion> | major | minor | patch | premajor | preminor | prepa
 <https://github.com/npm/node-semver#versions>
 
 <https://docs.npmjs.com/about-semantic-versioning>
+- 元组: [major, minor, patch];
 - major: 主版本, 不兼容之前版本;
 - minor: 次版本, 新特性(new features), 兼容之前版本;
 - patch: 补丁版本, 修复bug, 兼容之前版本;
-- ~: patch, 补丁版本部分向上;
-- ^: minor, 次版本部分向上;
-- *: major, 主版本部分向上;
+- ~: patch, 补丁版本部分向上;  
+    如果指定了 minor 则允许 patch 部分的修改;  
+    如果没有 minor 则允许 minor 部分的修改。
+    ```javascript
+      // 指定 minor, 允许 patch 级别修改:
+      ~1.2.3: >=1.2.3 <1.3.0-0
+  
+      // 没指定 minor, 允许 minor 级别修改:
+      ~1: >=1.0.0 <2.0.0-0 (Same as 1.x)
+    ```
+- ^: minor, 次版本部分向上;   
+    不修改最左侧非零元素:
+    ```javascript
+      ^1.2.3: >=1.2.3 <2.0.0-0
+      ^0.2.3: >=0.2.3 <0.3.0-0
+      ^0.0.3: >=0.0.3 <0.0.4-0
+    ```
+- X, x, *: 可以表示任意位置。
