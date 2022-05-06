@@ -1,5 +1,4 @@
 # eslint报错及解决方案
-创建时间：2022-04-21
 
 ### eslint rules 中的 0 1 2
 - 0 or 'off': close the rule;

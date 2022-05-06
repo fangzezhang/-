@@ -1,5 +1,4 @@
 # Module
-创建时间：2022-03-04
 
 [ES modules: A cartoon deep-dive](https://hacks.mozilla.org/2018/03/es-modules-a-cartoon-deep-dive/)
 ## EMS 和 CJS

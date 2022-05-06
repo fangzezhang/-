@@ -1,5 +1,4 @@
 # ECharts@5.x
-创建时间：2022-03-17
 
 ## ECharts 升级到 5.x
 - 由于 ECharts@5.x 使用 ESM 方式导出, 所以需要在 babel-loader 中增加对 echarts 和 zrender 的编译:

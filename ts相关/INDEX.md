@@ -1,5 +1,4 @@
 # INDEX
-创建时间：2022-03-16  
 
 [typescript-tutorial](https://www.typescripttutorial.net/typescript-tutorial/typescript-tuple/)
 
