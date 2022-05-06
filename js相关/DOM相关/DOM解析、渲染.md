@@ -35,7 +35,6 @@ const readFile = function(path, res) {
 };
 
 http.createServer((req, res) => {
-  console.info(req.url);
   switch(req.url) {
     case '/':
       readFile(`${__dirname}/views/index.html`, res);
