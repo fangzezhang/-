@@ -3,7 +3,7 @@
 - 浏览器会预解析, 提前下载 JS、CSS 文件;
 - 浏览器解析 DOM 生成 DOM Tree; 
 - 浏览器解析 CSS 生成 CSS Tree; 
-- 两者结合生成 render tree;
+- 两者结合生成 render tree, 其中包含 DOM 树所有节点样式以及每个元素的集合坐标位置;
 - 分层: z-index; position: fixed;
 - 图层绘制;
 - 图层分块(栅格化): 可视窗口附近的图层块优先合成;
