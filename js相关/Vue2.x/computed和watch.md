@@ -2,12 +2,12 @@
 ### computed 是状态同时也是依赖
 - computed 被组件所依赖;
 - computed 依赖于其他状态。
-- initComputed() 时每个 computed 属性都会生成 new Watcher() 并将其缓存, new Watcher() 时传入 lazy: true;
+- initComputed() 时每个 computed 属性都会生成一个 new Watcher() 并将其缓存, new Watcher() 时传入 lazy: true;
 - 通过 Object.defineProperty() getter 收集依赖;
 - 组件渲染时会读取 computed 属性, 触发 getter;
 - getter 中通过 computed key 读取缓存中对应的 watcher;
-- 执行 watcher.evaluate() 使 computed 订阅它所依赖的状态;
-- 执行 watcher.depend() 使所在组件订阅 computed;
+- getter 中执行 watcher.evaluate() 使 computed 订阅它所依赖的状态;
+- getter 中执行 watcher.depend() 使所在组件订阅 computed;
 - 通过 watcher.dirty 属性判断是否需要重新计算 computed 值。
 
 ### 1. computed 解析
