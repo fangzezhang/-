@@ -22,25 +22,7 @@ function initState(vm) {
 #### 1.1 initComputed() 做了什么
 - 遍历 computed 对象, 对每个值都进行 new Watcher() 操作;
 - new Watcher() 时传入 option: { lazy: true } 表示该 Watcher 是个 computed;
-- new Watcher() 创建实例时会判断 lazy 属性, 如果为 true 则不会执行 this.get(), 即此时不会绑定 Dep.target;
-<details>
-<Summary>
-  class Watcher {}
-</Summary>
-<br>
-
-```javascript
-class Watcher {
-  constructor () {
-    ...
-    this.value = this.lazy ? undefined : this.get();
-    ...
-  }
-}
-```
-
-</details>
-
+- new Watcher() 创建实例时会判断 lazy 属性, 如果为 true 则不会执行 this.get(), 即: 此时不会绑定 Dep.target;
 - 执行 defineComputed();
 ```javascript
 function initComputed (vm: Component, computed: Object) {
@@ -68,8 +50,7 @@ function initComputed (vm: Component, computed: Object) {
 #### 1.2 defineComputed() 做了什么
 - 配置 Object.defineProperty 的属性描述符 getter、setter;
 - 使用 Object.defineProperty() 对 computed 属性进行变化侦测。
-- 与对 object 属性变化侦测相同, 使用 Object.defineProperty() 对 computed 进行变化侦测;
-- getter 中收集依赖, setter 中触发依赖。
+- getter 中收集依赖, setter 中触发回调。
 ```typescript
 const sharedPropertyDefinition = {
   enumerable: true,
@@ -101,14 +82,14 @@ function defineComputed (
 - 返回 function computedGetter;
 - computedGetter 返回 watcher.value;
 - computedGetter 通过 this._computedWatchers[key] 获取 initComputed 时创建的 computedWatcher;
-- 创建 watcher 时, this.dirty = this.lazy; 
-- 通过 dirty 属性判断 computed 是否需要重新计算;
-- 由于 computedWatcher.lazy = true, 可以执行 watcher.evaluate(); 
-- evaluate 中执行 this.get() 触发一系列依赖收集操作并修改 this.dirty = false;
-- 这样当 computed 中依赖的状态发生变化时, computedWatcher 执行 update(), 修改 this.dirty = true;
-- 状态发生变化导致组件重新渲染, 从而读取 computed 属性, 触发 getter(即 computedGetter), 此时 dirty = true, 对 computed 值进行重新计算;
-- 而 非computed 依赖的状态发生变化时, 由于此时 dirty = false, 所以不会触发 watcher.evaluate(), 即不会对 computed 进行重新计算;
-- watcher.getter() 最后会执行 popTarget(), 所以此时如果还有 Dep.target, 那么该 target 就是 computed 所在组件;
+- Watcher constructor 中对 dirty 赋值: this.dirty = this.lazy; 
+- 通过 dirty 判断是否需要重新计算 computed;
+- computedWatcher.lazy = true, 执行 watcher.evaluate(); 
+- evaluate 中执行 this.get() 触发依赖收集操作, 然后修改 this.dirty = false;
+- computed 所依赖的状态发生变化, 执行 computedWatcher.update(), 修改 this.dirty = true;
+- 状态变化导致组件重新渲染, 读取 computed 属性, 触发 getter(即 computedGetter), 此时 dirty = true, 对 computed 值进行重新计算;
+- 非computed 依赖的状态发生变化时, 此时 dirty = false, 不会触发 watcher.evaluate(), 所以不会对 computed 值进行重新计算;
+- watcher.getter() 执行 popTarget(), 此时如果还有 Dep.target, 该 target 就是 computed 所在组件生成的 Watcher;
 - 通过 watcher.depend() 执行 dep.depend() 收集依赖, 即该组件订阅了 computed 属性。
 ```typescript
 // src/core/instance/state.js
