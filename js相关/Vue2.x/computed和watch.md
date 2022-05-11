@@ -1,7 +1,7 @@
 # computed和watch
 ### computed 是状态同时也是依赖
-- computed 是状态, 被组件所依赖;
-- computed 同时也依赖于其他状态。
+- computed 被组件所依赖;
+- computed 依赖于其他状态。
 - initComputed() 时每个 computed 属性都会生成 new Watcher() 并将其缓存, new Watcher() 时传入 lazy: true;
 - 通过 Object.defineProperty() getter 收集依赖;
 - 组件渲染时会读取 computed 属性, 触发 getter;
