@@ -11,6 +11,13 @@
 - ls 查找 id_rsa.pub 文件;
 - cat id_rsa.pub 或者 vim id_rsa.pub: 查看公钥;
 
+## github.com 网站常用快捷键
+- ?: 查看当前页支持的快捷键;
+- T: 快速查找文件;
+- L: 跳转到某一行;
+- B: 查看文件提交记录;
+- 。: 开启web编辑器;
+
 ## 常用命令
 > 查看 git 安装位置
 > - where git: windows 查看 git 安装位置;
