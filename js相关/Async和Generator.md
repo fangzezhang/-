@@ -1,4 +1,14 @@
 # Async和Generator
+async/await 基于协程的概念:
+- 协程可以通过程序控制来暂停执行协程并跳出, 和返回协程继续执行。
+- ES6 是通过 Generator 实现协程概念：
+- 通过 function* 的形式创建 Generator 函数;
+- 执行函数创建协程;
+- 通过 .next() 执行协程;
+- 遇到 yield 跳出, 回到主协程;
+- 通过 .next() 返回暂停位置, 协程继续执行;
+- 通过 yield 和 .next() 完成父子协程之间的通信。
+
 ## 前置知识
 ### 协程(Coroutine)
 - 线程可以拥有多个协程，一个线程同时只能执行一个协程。
@@ -38,33 +48,28 @@ test2(); // Promise {<fulfilled>: 2};
 - 实现接收 yield 返回值(通过 .next(res) 传值到子协程);
 - 实现执行函数返回 Promise 对象的功能。
 ```javascript
-function asyncToGenerator(genFn) {
-  return function() {
-    return new Promise((resolve, reject) => {
-      const gen = genFn();
-      const _next = function(val = undefined) {
-        const info = gen.next(val);
-        if (info.done) {
-          resolve(info.value);
-        } else {
-          Promise
-            .resolve(info.value)
-            .then(res => {
-              _next(res);
-            })
-        }
-      };
+function genToAsync(genFn) {
+  const gen = genFn();
+  const _next = function(val = undefined) {
+    const info = gen.next(val);
+    if (info.done) {
+      return Promise.resolve(info.value);
+    } else {
+      return Promise.resolve(info.value)
+        .then(res => {
+          return _next(res);
+        });
+    }
+  };
 
-      _next();
-    })
-  }
+  return _next();
 }
 
 // 异步任务
-function task1() {
+function task() {
   return new Promise(resolve => {
     setTimeout(function () {
-      resolve('task1');
+      resolve('task');
     }, 1000);
   })
 }
@@ -72,8 +77,11 @@ function task1() {
 // 项目代码
 function* gen() { 
   console.info(1);
-  const res1 = yield task1();
-  console.info(res1);
+  const res = yield task();
+  console.info(res);
 }
-asyncToGenerator(gen)();
+genToAsync(gen)
+  .then(res => {
+    console.info(res);
+  });
 ```
