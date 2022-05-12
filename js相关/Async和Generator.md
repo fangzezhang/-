@@ -34,9 +34,9 @@ test2(); // Promise {<fulfilled>: 2};
 - foo 协程继续执行后面的代码, 结束之后将控制权归还父协程。
 
 ## Generator + Promise 实现 async/await
-- 实现 generator 函数以 async/wait 类似的形式执行;
-- 实现接收 yield 返回值(通过 .next(res) 传值到子协程里);
-- 实现执行返回 Promise 对象的功能。
+- 实现和 async/wait 类似的执行 generator 函数;
+- 实现接收 yield 返回值(通过 .next(res) 传值到子协程);
+- 实现执行函数返回 Promise 对象的功能。
 ```javascript
 function asyncToGenerator(genFn) {
   return function() {
