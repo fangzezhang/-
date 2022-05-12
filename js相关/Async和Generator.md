@@ -50,7 +50,7 @@ test2(); // Promise {<fulfilled>: 2};
 ```javascript
 function genToAsync(genFn) {
   const gen = genFn();
-  const _next = function(val = undefined) {
+  const _next = function(val) {
     const info = gen.next(val);
     if (info.done) {
       return Promise.resolve(info.value);
