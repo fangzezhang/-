@@ -29,7 +29,9 @@ function test(cb: unknown) {
 ### 条件类型
 - extends 类似于三目运算符:
 ```typescript
-type Test<T> = T extends any[] ? T[number] : T;
+// 将数组类型展平为其元素类型的类型
+type Flatten<T> = T extends any[] ? T[number] : T;
+type Flatten2<T> = T extends Array<infer Item> ? Item : T;
 ```
 - extends 和 Union Types:
     > T = A | B | C;  
