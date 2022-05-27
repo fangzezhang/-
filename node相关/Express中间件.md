@@ -5,13 +5,14 @@
 ```javascript
 const app = express();
 app.use(
-'/user:id', 
-(req, res, next) => {
-  next();
-}, 
-(req, res, next) => {
- next();
-});
+  '/user:id', 
+  (req, res, next) => {
+    next();
+  }, 
+  (req, res, next) => {
+    next();
+  }
+);
 app.get('/user/:id', (req, res, next) => {
   next();
 });
@@ -43,5 +44,11 @@ app.use(express.static('public', options))
 ### 第三方插件
 ```javascript
 const bodyParser = require('body-parser');
-app.use(bodyParser.json());
+app.use(
+  '/user', 
+  bodyParser.json(), 
+  proxy({
+    target: 'xxx URL'
+  })
+);
 ```
