@@ -32,3 +32,5 @@
   console.info("The code in setup is executed before onBeforeMount");
 </script>
 ```
+### \<script> 和 \<script setup>
+- \<script> 只会在第一次导入组件时执行, \<script setup> 每次创建组件时都会执行。
