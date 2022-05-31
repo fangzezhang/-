@@ -19,22 +19,22 @@
 - 。: 开启web编辑器;
 
 ## 常用命令
-> 查看 git 安装位置
-> - where git: windows 查看 git 安装位置;
-> - which git: mac 查看 git 安装位置;
+- git log: 查看提交记录;
+- git show: 查看提交详情;
+### 查看 git 安装位置
+- where git: windows 查看 git 安装位置;
+- which git: mac 查看 git 安装位置;
 
-> 查看本地 / 远程分支情况
-> - git branch: 列出所有本地分支;
-> - git branch -r: 列出所有远程分支;
-> - git branch -a: 列出所有本地分支 + 远程分支;
+### 查看本地 / 远程分支情况
+- git branch: 列出所有本地分支;
+- git branch -r: 列出所有远程分支;
+- git branch -a: 列出所有本地分支 + 远程分支;
 - git remote show origin: 查看远程分支状态;
 - git remote prune origin: 删除本地依旧显示, 但远程已删除的分支;
 - git checkout -b XXX: 本地新建一个分支，并切换到该分支;
 - git push: 将当前分支推送至远程同名分支;
 - git push origin XXX: 将代码修改/新建的分支提交到远程 XXX 分支;
 - git push origin XXX --force: 将更改强制推送;
-- git log: 查看提交记录;
-- git show: 查看提交详情;
 
 ### git stash 常用命令
 + git stash list: 查看储藏栈;
