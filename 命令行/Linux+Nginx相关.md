@@ -4,7 +4,7 @@
 - clear / reset: Linux 清屏
 ## Linux基本命令
 Linux中以 . 开头的文件/文件夹为隐藏文件/文件夹
-- pwd : 查看当前目录;
+- pwd : 获取当前目录;
 - / : 根目录;
 - cd / : 跳转到根目录, cd(change directory);
 - cd .. : 跳到上一层;
