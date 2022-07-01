@@ -2,7 +2,7 @@
 
 ## JS相关: [Index](./js相关/INDEX.md)
 - ### [ES Module相关](./js相关/Module.md)
-- ### [DOM 解析、渲染](./js相关/DOM相关/DOM解析、渲染.md)
+- ### [DOM解析、渲染和 CSS, JS 文件的关系](./js相关/DOM相关/DOM解析、渲染和CSS,JS的关系.md)
 - ### [Vue 相关](./js相关/Vue2.x/INDEX.md)
 - ### [数据结构](./js相关/数据结构.md)
 
