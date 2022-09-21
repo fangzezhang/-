@@ -24,7 +24,9 @@ Linux中以 . 开头的文件/文件夹为隐藏文件/文件夹
 - tar cvzf etcbak.tar.gz etc/:  打包压缩一个 tar;
 - tar zxvf etcbak.tar.gz:   解压一个tar;
 - mkdir XX: 创建XX文件夹;
-- rm 文件/文件夹: 删除文件/文件夹;
+- rm 文件: 删除文件;
+- rm -d [文件夹]: 删除空目录;
+- rm -r [文件夹]: 删除非空目录;
 - chmod 731 filename.sh: 对 filename.sh 文件赋加执行权限; 
 - netstat -tunlp: 查看端口进程;
 - netstat -tunlp |grep 80: 查看80端口进程;
