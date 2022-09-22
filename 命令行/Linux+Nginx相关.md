@@ -23,7 +23,13 @@ Linux中以 . 开头的文件/文件夹为隐藏文件/文件夹
 - tar xvf etcbak.tar: 解开一个tar;
 - tar cvzf etcbak.tar.gz etc/:  打包压缩一个 tar;
 - tar zxvf etcbak.tar.gz:   解压一个tar;
-- mkdir XX: 创建XX文件夹;
+- mkdir + 文件夹名: 创建目录;
+- mkdir -p + 文件夹名: 直接创建一个不存在的目录下的子目录;
+- mkdir -p CN/gansu/baiyin/t : 递归的创建目录;
+- mv + 文件名/目录名 + 目录名: 将文件/目录移动到目录下;
+- mv A B: 将目录 A 重命名为 B;
+- tree : 显示当前文件的树结构;
+- tree CN: 显示CN目录的树结构;
 - rm 文件: 删除文件;
 - rm -d [文件夹]: 删除空目录;
 - rm -r [文件夹]: 删除非空目录;
@@ -55,12 +61,6 @@ Linux中以 . 开头的文件/文件夹为隐藏文件/文件夹
 - :set number 显示行数;
 - cat + 文件名: 查看文件-直接到文件最后;
 - more + 文件名: 查看文件-慢慢看文件, 回车->一行行看, 空格->一页页看;
-- mkdir + 文件夹名: 创建目录;
-- mkdir -p + 文件夹名: 直接创建一个不存在的目录下的子目录;
-- mkdir -p CN/gansu/baiyin/t : 递归的创建目录;
-- mv + 文件名/目录名 + 目录名: 将文件/目录移动到目录下;
-- tree : 显示当前文件的树结构;
-- tree CN: 显示CN目录的树结构;
 
 ### shell 相关
 - sh XXX.sh: 执行 XXX.sh 脚本;
