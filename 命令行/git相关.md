@@ -50,6 +50,10 @@
 3. 本地项目执行 git remote add origin XXX.git(github 上新建的项目地址)
 4. git push origin master 上传到指定分支
 
+### 与远程分支同步
++ git fetch origin
++ git rebase origin/develop
+
 ### git rebase 流程
 + 查看本地commit记录: git log / git show 
 + 合并之前的commit, 4 表示最近的 4 次: git rebase -i HEAD~4 
