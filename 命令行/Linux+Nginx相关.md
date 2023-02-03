@@ -25,7 +25,7 @@ Linux中以 . 开头的文件/文件夹为隐藏文件/文件夹
 - tar zxvf etcbak.tar.gz:   解压一个tar;
 - mkdir + 文件夹名: 创建目录;
 - mkdir -p + 文件夹名: 直接创建一个不存在的目录下的子目录;
-- mkdir -p CN/gansu/baiyin/t : 递归的创建目录;
+- mkdir -p CN/gansu/baiyin/t : 创建层级目录;
 - mv + 文件名/目录名 + 目录名: 将文件/目录移动到目录下;
 - mv A B: 将目录 A 重命名为 B;
 - tree : 显示当前文件的树结构;
