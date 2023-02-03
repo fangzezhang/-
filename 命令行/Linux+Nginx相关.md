@@ -19,6 +19,9 @@ Linux中以 . 开头的文件/文件夹为隐藏文件/文件夹
 - ls -lha: 与 ls -lh类似;
 - stat 文件名: 查看文件详细信息, 比 ls 更加详细;
 - du -sh * :  查看所有文件夹大小;
+- du -h --max-depth=1 : 查看当前目录下各文件夹、文件大小;
+- df -h: 查看磁盘空间信息;
+- du -sh: 查看指定目录总大小;
 - tar cvf etcbak.tar etc/:   打包一个tar;
 - tar xvf etcbak.tar: 解开一个tar;
 - tar cvzf etcbak.tar.gz etc/:  打包压缩一个 tar;
@@ -36,6 +39,9 @@ Linux中以 . 开头的文件/文件夹为隐藏文件/文件夹
 - chmod 731 filename.sh: 对 filename.sh 文件赋加执行权限; 
 - netstat -tunlp: 查看端口进程;
 - netstat -tunlp |grep 80: 查看80端口进程;
+- head -n 5 /tmp/tmpfile: 查看 tmpfile 文件前5行;
+- tail -n 5 /tmp/tmpfile: 查看 tmpfile 文件后5行;
+- cat filename | tail -n +100 | head -n 200: 显示100-299行;
 
 ### vim 命令相关
 - touch fileA: 如果fileA存在, 更改这个文件或目录的日期时间, 否则在当前目录下新建一个空白文件fileA;
