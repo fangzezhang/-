@@ -42,6 +42,9 @@ Linux中以 . 开头的文件/文件夹为隐藏文件/文件夹
 - head -n 5 /tmp/tmpfile: 查看 tmpfile 文件前5行;
 - tail -n 5 /tmp/tmpfile: 查看 tmpfile 文件后5行;
 - cat filename | tail -n +100 | head -n 200: 显示100-299行;
+- ln [参数][源文件或目录][目标文件或目录]: 为某个文件在另一个位置建立一个同步的链接;
+- ln -s: 建立软链接;
+- unlink 软链接: 删除软链接;
 
 ### vim 命令相关
 - touch fileA: 如果fileA存在, 更改这个文件或目录的日期时间, 否则在当前目录下新建一个空白文件fileA;
