@@ -54,6 +54,11 @@
 + git fetch origin
 + git rebase origin/develop
 
+### 文件修改/删除后, 先执行 add, 然后执行 commit
+- git add <filename>: 将特定的 file 从工作区添加到暂存区, 告诉 Git 下次哪些变化需要保存到仓库区;
+- git add . : 当前目录下所有变化的文件, 放入暂存区;
+- git commit <filename> -m "message": 将暂存区中的变化提交到仓库区。
+
 ### git rebase 流程
 + 查看本地commit记录: git log / git show 
 + 合并之前的commit, 4 表示最近的 4 次: git rebase -i HEAD~4 
