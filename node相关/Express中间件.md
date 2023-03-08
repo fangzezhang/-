@@ -2,6 +2,7 @@
 
 ### 应用级中间件
 - app.use() | app.METHOD()
+- 除非结束请求(eg: res.send()), 否则必须调用 next 函数
 ```javascript
 const app = express();
 app.use(
