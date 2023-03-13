@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>index</title>
+  <script src="index.js" defer></script>
+  <link rel="stylesheet" href="index.css">
+</head>
+<body>
+<div>
+  div
+</div>
+<p></p>
+<button onclick="requestIndex2()">请求 index2.js 文件</button>
+<button onclick="requestAjax()">发送 ajax请求</button>
+<script>
+  function requestIndex2() {
+    const script = document.createElement('script');
+    script.src = './index2.js';
+    document.head.appendChild(script);
+  }
+
+  function requestAjax() {
+    const xhr = new XMLHttpRequest();
+    xhr.open('GET', 'http://localhost:3000/resType');
+    xhr.send();
+    xhr.responseType = 'blob';
+    xhr.onreadystatechange = function() {
+      // const result = xhr.responseText;
+      if (xhr.readyState === 4) {
+        console.info(xhr);
+        console.info(xhr.response);
+        /*const a = document.createElement('a');
+        const src = URL.createObjectURL(xhr.response);
+        console.info(src);
+        a.download = 'test.js';
+        a.href = src;
+        a.click();*/
+      }
+    }
+  }
+</script>
+</body>
+</html>

@@ -16,7 +16,7 @@
 - JS 加载、执行会阻塞 DOM 解析;
 - JS 会阻塞页面渲染。
 ### 验证方式：
-#### 1. 创建一个简单的 node 服务器
+#### 1. 创建一个简单的 node 服务器([代码](./JS和CSS加载与DOM渲染/main.js))
 <details>
 <Summary>
   main.js
