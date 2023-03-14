@@ -47,7 +47,9 @@
 ### 将本地项目上传到 github 上
 1. 本地项目 git init 
 2. github 上创建对应的新项目，并复制项目地址
-3. 本地项目执行 git remote add origin XXX.git(github 上新建的项目地址)
+3. 本地项目执行 git remote add origin XXX.git(github 上新建的项目地址)  
+如果出现 fatal: remote origin already exists,  
+执行 git remote rm origin 删除远程仓库
 4. git push origin master 上传到指定分支
 
 ### 与远程分支同步
