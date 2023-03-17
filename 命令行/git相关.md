@@ -82,3 +82,30 @@
 ### 修改密码后, git pull / push 报错 [fatal: Authentication failed for]
 + windows 控制面板 -> 用户账户 -> 凭据管理器 -> windows凭据
 + 修改 git 网址对应的账号密码
+
+## git oAuth
+- [授权](https://docs.github.com/en/apps/oauth-apps/building-oauth-apps/authorizing-oauth-apps#device-flow)  
+- [创建, 管理 access token](https://docs.github.com/en/authentication/keeping-your-account-and-data-secure/creating-a-personal-access-token)
+### 1. 请求用户的 GitHub 身份
+```javascript
+GET https://github.com/login/oauth/authorize
+```
+### 2. 从 GitHub 重定向到用户站点
+- 可以通过配置 setting -> Developer settings -> OAuth Apps -> Authorization callback URL
+- 用户在被授权后重定向到 Authorization callback URL。
+```javascript
+POST `https://github.com/login/oauth/access_token?client_id=${clientId}&client_secret=${clientSecret}&code=${code}`
+```
+### 3. 使用用户 access token 访问 API
+```javascript
+headers: {
+  Authorization: Bearer OAUTH-TOKEN
+}
+GET https://api.github.com/user
+```
+
+## API 操作 git database
+[文档](https://docs.github.com/en/rest/git/blobs?apiVersion=2022-11-28)
+
+### get a reference
+[https://docs.github.com/en/rest/git/refs?apiVersion=2022-11-28#get-a-reference](https://docs.github.com/en/rest/git/refs?apiVersion=2022-11-28#get-a-reference)
