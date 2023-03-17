@@ -19,13 +19,15 @@ http://manos.malihu.gr/jquery-custom-content-scroller/
 - bxSlider: 滑动插件-基于jQuery https://bxslider.com/options/
 
 ### Node 插件
-- env-cmd 管理注入环境变量: https://github.com/toddbluhm/env-cmd
-- portfinder: 查找可用端口 https://www.npmjs.com/package/portfinder
-- body-parser: express 中间件, 解析 request body https://github.com/expressjs/body-parser
-- morgan: 中间件, 生成日志 https://github.com/expressjs/morgan
-- winston: 多种方式输出日志(FILE, CONSOLE, custom) https://github.com/winstonjs/winston
-- @pm2/io: 记录事件频率, 可通过 pm2 plus | Enterprise 查看 https://github.com/keymetrics/pm2-io-apm
-- lru-cache: 配置 SSR 页面缓存(通常配置 maxAge: 1000 SSR页面存活1秒) https://github.com/isaacs/node-lru-cache
+- [env-cmd](https://github.com/toddbluhm/env-cmd) 管理注入环境变量
+- [portfinder](https://www.npmjs.com/package/portfinder): 查找可用端口 
+- [body-parser](https://github.com/expressjs/body-parser): express 中间件, 解析 request body 
+- [morgan](https://github.com/expressjs/morgan): 中间件, 生成日志 
+- [winston](https://github.com/winstonjs/winston): 多种方式输出日志(FILE, CONSOLE, custom) 
+- [@pm2/io](https://github.com/keymetrics/pm2-io-apm): 记录事件频率, 可通过 pm2 plus | Enterprise 查看 
+- [lru-cache](https://github.com/isaacs/node-lru-cache): 配置 SSR 页面缓存(通常配置 maxAge: 1000 SSR页面存活1秒) 
+- [dotenv](https://github.com/motdotla/dotenv#readme): 插入环境变量, 从 .env 文件加载到 process.env 中
+- [concurrently](https://github.com/open-cli-tools/concurrently#readme): 并行执行多个 scripts
 
 ### webpack 插件
 - CopyWebpackPlugin 将单个文件或整个文件夹复制到build目录
