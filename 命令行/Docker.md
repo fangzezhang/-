@@ -114,6 +114,42 @@ volumes:
   netdatalib:
   netdatacache:
 ```
+
+#### heimdall: 书签管理
+```
+version: "2.1"
+services:
+  heimdall:
+    image: linuxserver/heimdall
+    container_name: heimdall
+    volumes:
+      - ./config:/config
+    environment:
+      - PUID=1000
+      - PGID=1000
+      - TZ=Asia/Shanghai
+    ports:
+      - 80:80
+    restart: unless-stopped
+```
+
+#### filebrowser: 文件上传/下载
+```
+version: '3'
+services:
+  filebrowser:
+    restart: always
+    image: filebrowser/filebrowser
+    container_name: filebrowser
+    ports:
+      - "9001:80"
+    volumes:
+      - /etc/timezone:/etc/timezone:ro
+      - /etc/localtime:/etc/localtime:ro
+      - /home1/irteamsu/shared:/srv
+      - ./filebrowser.db:/database.db
+```
+
 - 运行 
 ```javascript
 sudo docker-compose up -d
