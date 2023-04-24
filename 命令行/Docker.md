@@ -52,7 +52,7 @@ curl -SL https://github.com/docker/compose/releases/download/v2.16.0/docker-comp
 sudo chmod +x /usr/local/bin/docker-compose
 sudo chmod +x /usr/bin/docker-compose
 ```
-- 建立软连接
+- 建立软连接:
 ```javascript
 sudo ln -s /usr/local/bin/docker-compose /usr/bin/docker-compose
 ```
@@ -63,6 +63,10 @@ sudo ln -s /usr/local/bin/docker-compose /usr/bin/docker-compose
 - docker-compose up -d: 启动程序, 后台执行该服务;
 - docker-compose down: 关闭并移除容器;
 - docker-compose build --no-cache: 构建或重新构建服务;
+- 进入 docker 容器执行命令:
+```
+sudo docker exec -it docker_container bash
+```
 #### portainer: Docker Compose 图像化管理界面:
 - 创建 docker-compose.yml
 ```javascript
@@ -86,6 +90,8 @@ sudo docker-compose up -d
 
 #### netdata: 对系统和应用程序的健康监控:
 - 创建 docker-compose.yml
+- 运行 sudo docker-compose up -d
+- 即可在 :9002 端口查看 netdata。 
 ```javascript
 version: '3'
 services:
@@ -150,10 +156,28 @@ services:
       - ./filebrowser.db:/database.db
 ```
 
-- 运行 
+### 将本地 MySQL 数据转移到 docker MySQL里
+- 服务器生成 github 私钥:
 ```javascript
-sudo docker-compose up -d
+ssh-keygen -t rsa -b 2048 -C "your_email@example.com"
+cd ~/.ssh/
+cat id_rsa.pub
 ```
-- 即可在 :9002 端口查看 netdata。 
+- git clone 
+- 导出本地 MySQL 数据:
+```
+mysqldump -u username -p database_name > database_name.sql
+```
+- 将导出的 SQL 文件传输到 docker 容器中:
+```
+sudo docker cp database_name.sql mysql_container:/docker-entrypoint-initdb.d/
+```
+- 进入 docker 容器运行命令:
+```
+sudo docker exec -it mysql_container mysql -uroot -p
+my_database < /docker-entrypoint-initdb.d/database_name.sql
+```
+
+
 ### DockerHub
 - [官网](https://hub.docker.com/)
