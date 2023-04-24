@@ -21,6 +21,7 @@
 ## 常用命令
 - git log: 查看提交记录;
 - git show: 查看提交详情;
+- git remote remove origin: 删除已存在的 "origin" 远程仓库;
 ### 查看 git 安装位置
 - where git: windows 查看 git 安装位置;
 - which git: mac 查看 git 安装位置;
