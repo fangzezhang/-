@@ -175,7 +175,12 @@ sudo docker cp database_name.sql mysql_container:/docker-entrypoint-initdb.d/
 - 进入 docker 容器运行命令:
 ```
 sudo docker exec -it mysql_container mysql -uroot -p
+
+-- 方法1
 my_database < /docker-entrypoint-initdb.d/database_name.sql
+
+-- 方法2
+source /docker-entrypoint-initdb.d/serve.sql;
 ```
 
 
