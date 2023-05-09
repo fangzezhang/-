@@ -30,8 +30,11 @@ http://manos.malihu.gr/jquery-custom-content-scroller/
 - [concurrently](https://github.com/open-cli-tools/concurrently#readme): 并行执行多个 scripts
 
 ### webpack 插件
-- CopyWebpackPlugin 将单个文件或整个文件夹复制到build目录
-https://www.webpackjs.com/plugins/copy-webpack-plugin/#root
+- [CopyWebpackPlugin](https://www.webpackjs.com/plugins/copy-webpack-plugin/#root): 将单个文件或整个文件夹复制到build目录
+
+### webstorm 插件
+- [evalRest](https://youwu.today/blog/jetbrains-evaluate-reset/): 重置 webstorm 试用期插件 [ide-eval-resetter-2.3.5-c80a1d.zip](./webstorm/ide-eval-resetter-2.3.5-c80a1d.zip)
+- [settings.zip](./webstorm/settings.zip): webstorm 快捷键及风格配置 
 
 ### 工具网站
 - RegExp 图形化展示: https://regexper.com/#%2F%5B%5E%5Cw.%24%5D%2F
