@@ -44,6 +44,7 @@
 + git stash apply 名字: 恢复指定的储藏，如果不指定储藏，默认最近的储藏;
 + git stash drop 名字: 可以移除指定的储藏;
 + git stash pop: 恢复储藏然后立即从栈上扔掉它;
++ rm -rf .git: 从项目中移除 git;
 
 ### 将本地项目上传到 github 上
 1. 本地项目 git init 
