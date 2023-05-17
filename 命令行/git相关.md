@@ -22,6 +22,9 @@
 - git log: 查看提交记录;
 - git show: 查看提交详情;
 - git remote remove origin: 删除已存在的 "origin" 远程仓库;
+- git branch -d XXX: 删除本地分支;
+- git push origin -d XXX: 删除远程分支;
+
 ### 查看 git 安装位置
 - where git: windows 查看 git 安装位置;
 - which git: mac 查看 git 安装位置;
