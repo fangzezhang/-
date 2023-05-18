@@ -355,11 +355,13 @@ FROM shop.shohin;
 ```
 
 - CASE 表达式可以书写在任意位置
+- 使用 CASE 进行行列转换:
 ```
-/*使用 CASE 进行行列转换*/
 -- GROUP BY 无法进行行列转换:
-SELECT shohin_bunrui, SUM(hanbai_tanka) AS sum_hanbai_tanka
-FROM shop.shohin;
+SELECT shohin_bunrui, 
+        SUM(hanbai_tanka) AS sum_hanbai_tanka
+    FROM shop.shohin
+GROUP BY shohin_bunrui;
 
 -- 使用 CASE 进行行列转换:
 SELECT 
