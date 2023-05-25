@@ -12,6 +12,7 @@
 - npm install pm2@latest -g;
 - pm2 update;
 - npm ls -g vm2: 升级后再次确认 vm2 版本。
+- npm ls: 分析当前目录下能够通过模块路径找到的所有包, 并生成依赖树;
 
 ### node 模块作用域--变量
 - __dirname: 当前模块的目录名;
