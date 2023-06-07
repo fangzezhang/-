@@ -17,6 +17,7 @@
 - ### [回声服务器](./node相关/回声服务器/INDEX.md)
 - ### [Express中间件](node相关/express/中间件.md)
 - ### [Express结束响应](node相关/express/结束响应.md)
+- ### [深入浅出Node](node相关/深入浅出Node/INDEX.md)
 
 ## 命令行: [Index](./命令行)
 - ### [git相关](./命令行/git相关.md)
