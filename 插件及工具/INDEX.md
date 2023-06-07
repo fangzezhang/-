@@ -39,3 +39,10 @@ http://manos.malihu.gr/jquery-custom-content-scroller/
 ### 工具网站
 - RegExp 图形化展示: https://regexper.com/#%2F%5B%5E%5Cw.%24%5D%2F
 - 贝赛尔曲线生成: http://cubic-bezier.com/#.3,-1.2,.76,.72
+
+### 测试工具
+- Apache Bench: 网络性能测试
+```
+// 发起 200 个并发客户端
+ab -c 200 -t 100 http://127.0.0.1:8001/
+```
