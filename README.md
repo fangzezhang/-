@@ -19,6 +19,9 @@
 - ### [Express结束响应](node相关/express/结束响应.md)
 - ### [深入浅出Node](node相关/深入浅出Node/INDEX.md)
 
+## 算法: [Index](./算法/INDEX.md)
+- ### [回溯算法](./算法/回溯算法.md)
+
 ## 命令行: [Index](./命令行)
 - ### [git相关](./命令行/git相关.md)
 - ### [Linux+Nginx相关](./命令行/Linux+Nginx相关.md)
