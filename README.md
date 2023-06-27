@@ -9,6 +9,7 @@
 - ### [Vue3](./js相关/Vue3.md)
 - ### [光标相关](./js相关/光标相关.md)
 - ### [运算符](./js相关/运算符.md)
+- ### [ThreeJS](./js相关/ThreeJS/INDEX.md)
 
 ## TS相关: [Index](./ts相关/INDEX.md)
 - ### [TS总览](./ts相关/INDEX.md)
