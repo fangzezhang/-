@@ -93,6 +93,7 @@ Linux中以 . 开头的文件/文件夹为隐藏文件/文件夹
 - :d cd soft\nginx\nginx-1.19.6-window: 跳转到 nginx 相关目录;
 - start nginx: 启动;
 - tasklist /fi "imagename eq nginx.exe": 查看 nginx 进程;
+- nginx -s reload: 重启 nginx;
 - nginx -s stop: 快速停止, 无输出;
 - nginx -s quit: 完整有序停止, 无输出;
 - taskkill /f /im nginx.exe: 使用 taskkill 关闭所有 nginx;
