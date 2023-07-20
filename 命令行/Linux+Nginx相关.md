@@ -90,7 +90,44 @@ Linux中以 . 开头的文件/文件夹为隐藏文件/文件夹
 - $1～$n: 添加到Shell的各参数值, $1是第1参数、$2是第2参数…; 
 
 ## nginx 命令
+```
+// nginx.conf
+server {
+    location / {
+        root   /path/to/your/react/app/build;
+        try_files $uri $uri/ /index.html;
+    }
+
+    location /api {
+      proxy_pass http://backend-server;
+    }
+}
+```
+````
+// 反向代理
+// nginx.conf 
+http {
+  server {
+    listen 80;
+    server_name domain1.com;
+
+    location / {
+      proxy_pass http://127.0.0.1:8000;
+    }
+  }
+
+  server {
+    listen 80;
+    server_name domain2.com;
+
+    location / {
+      proxy_pass http://127.0.0.1:9000;
+    }
+  }
+}
+```
 - :d cd soft\nginx\nginx-1.19.6-window: 跳转到 nginx 相关目录;
+- nginx -t: 检查 nginx 配置是否正确;
 - start nginx: 启动;
 - tasklist /fi "imagename eq nginx.exe": 查看 nginx 进程;
 - nginx -s reload: 重启 nginx;
