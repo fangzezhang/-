@@ -7,6 +7,12 @@
 - scripts 中 &: 同时并行执行多个任务;
 - scripts 中 &&: 前一个任务成功, 才执行下一个任务;
 
+### nvm 
+- nvm list available: 查看可用 Node 版本;
+- nvm install node-version: 安装一个版本的 Node;
+- nvm list: 查看你机器上安装的 Node 版本;
+- nvm use node-version: 使用特定版本的 Node;
+
 ### pm2 依赖的 vm2 存在安全漏洞, 查询 vm2 版本并升级 pm2:
 - npm ls -g vm2: 查询 vm2 版本
 - npm install pm2@latest -g;
