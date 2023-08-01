@@ -12,6 +12,8 @@
 - nvm install node-version: 安装一个版本的 Node;
 - nvm list: 查看你机器上安装的 Node 版本;
 - nvm use node-version: 使用特定版本的 Node;
+- nvm use latest: 使用最新版本;
+- nvm use lts: 使用长期支持版本;
 
 ### pm2 依赖的 vm2 存在安全漏洞, 查询 vm2 版本并升级 pm2:
 - npm ls -g vm2: 查询 vm2 版本
