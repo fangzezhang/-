@@ -46,3 +46,10 @@ http://manos.malihu.gr/jquery-custom-content-scroller/
 // 发起 200 个并发客户端
 ab -c 200 -t 100 http://127.0.0.1:8001/
 ```
+
+### [Joplin](https://joplinapp.org/)
+- 多端云笔记。
+
+### [pandora](https://github.com/pengzhile/pandora)
+- ChatGPT 绕过 Cloudflare。
+
