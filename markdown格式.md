@@ -63,3 +63,7 @@ Markdown 制作表格使用 | 来分隔不同的单元格，使用 - 来分隔�
 <br>
 折叠内容
 </details>
+
+## 上标，下标
+2<sup>6</sup>  
+a<sub>n</sub>
