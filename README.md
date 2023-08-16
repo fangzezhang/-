@@ -31,6 +31,7 @@
 - ### [node+npm+yarn相关](./命令行/node+npm+yarn相关.md)
 - ### [Docker相关](./命令行/Docker.md)
 - ### [curl](./命令行/curl.md)
+- ### [Android命令](./命令行/Android命令.md)
 
 ## SQL相关: [Index](./SQL相关/INDEX.md)
 - ### [SQL基础](./SQL相关/SQL基础/INDEX.md)
