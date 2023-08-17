@@ -90,11 +90,15 @@ Linux中以 . 开头的文件/文件夹为隐藏文件/文件夹
 - $1～$n: 添加到Shell的各参数值, $1是第1参数、$2是第2参数…; 
 
 ## nginx 命令
+- http://localhost/ 查看项目
 ```
 // nginx.conf
 server {
+    listen       80;
+    server_name  localhost;
     location / {
         root   /path/to/your/react/app/build;
+        index  index.html;
         try_files $uri $uri/ /index.html;
     }
 
