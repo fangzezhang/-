@@ -8,6 +8,7 @@
 - ### [数据结构](./js相关/数据结构.md)
 - ### [Async 和 Generator](./js相关/Async和Generator.md)
 - ### [Vue3](./js相关/Vue3.md)
+- ### [Axios](./js相关/Axios.md)
 - ### [光标相关](./js相关/光标相关.md)
 - ### [运算符](./js相关/运算符.md)
 - ### [ThreeJS](./js相关/ThreeJS/INDEX.md)
