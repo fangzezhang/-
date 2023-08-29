@@ -10,3 +10,4 @@
 - [光标相关](./光标相关.md)
 - [运算符](./运算符.md)
 - [ThreeJS](./ThreeJS/INDEX.md)
+- [TS](./TS/INDEX.md)
