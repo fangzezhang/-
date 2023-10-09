@@ -7,6 +7,7 @@
 - [Vue3](./Vue3.md)
 - [Axios](./Axios.md)
 - [数据结构](./数据结构.md)
+- [JS错误类型](./JS错误类型.md)
 - [光标相关](./光标相关.md)
 - [运算符](./运算符.md)
 - [ThreeJS](./ThreeJS/INDEX.md)
