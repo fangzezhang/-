@@ -4,7 +4,7 @@
 - [Async 和 Generator](./Async和Generator.md)
 - [Vue 相关](./Vue2.x/INDEX.md)
 - [React](./React/INDEX.md)
-- [Vue3](./Vue3.md)
+- [Vue3](Vue3/INDEX.md)
 - [Axios](./Axios.md)
 - [数据结构](./数据结构.md)
 - [JS错误类型](./JS错误类型.md)
