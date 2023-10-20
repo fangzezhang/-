@@ -111,11 +111,6 @@ function getFinalState(baseState, queue) {
 }
 ```
 
-#### 从状态改变到 UI 展示
-- Trigger(触发);
-- Render(渲染): 构建虚拟DOM;
-- Commit(提交): 虚拟DOM 差异计算, 更新真实 DOM;
-
 ### useReducer: 将多个状态的更新逻辑提取, 集中
 - 对需要更新多个状态的组件, 将状态更新逻辑提取到 reducer 中, 避免事件处理程序分散。
 ```
@@ -179,7 +174,7 @@ const value = useContext(SomeContext);
 - SomeContext: 使用 createContext 创建的 context; 
 - value: 离调用组件最近的 SomeContext.Provider 的 value。
 
-### useRef: 存储的信息发生改变, 不会触发新的渲染
+### useRef: 存储数据, 存储的信息发生改变时不会触发新的渲染
 ```
 const ref = useRef(initialValue)
 ```
@@ -232,6 +227,11 @@ useEffect(setup, dependencies?);
     渲染的代码必须是纯粹的, 只应该“计算”结果。
 - 事件处理程序: 嵌套在组件内部的函数, 可能更新输入字段、提交 HTTP POST 等;  
     包含由特定的用户操作引起的“副作用”(改变了程序的 state)。
+
+#### 从状态改变到 UI 展示
+- Trigger(触发);
+- Render(渲染): 构建虚拟DOM;
+- Commit(提交): 虚拟DOM 差异计算, 更新真实 DOM;
 
 #### Effects
 - Effect 在 React Commit 阶段的最后执行, 确保能够访问到最新的 DOM 结构。
@@ -385,3 +385,24 @@ export default function useOnlineStatus() {
   return isOnLine;
 }
 ```
+
+### useCallback
+```
+const cachedFn = useCallback(fn, dependencies);
+```
+- 在多次渲染中缓存函数;
+
+#### useCallback 用途
+- 只用于性能优化;
+- 将 cachedFn 作为 props 传递给包装在 memo 中的组件;
+- cachedFn 被用于其他 hook 的 dependencies;
+
+### useMemo
+```
+const cachedValue = useMemo(calculateValue, dependencies)
+```
+- 缓存计算的结果;
+- calculateValue: 函数, React 在首次渲染时调用该函数;
+
+### useTransition
+- 不阻塞 UI 的情况下更新状态;
