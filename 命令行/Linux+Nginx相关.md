@@ -46,6 +46,50 @@ Linux中以 . 开头的文件/文件夹为隐藏文件/文件夹
 - ln -s: 建立软链接;
 - unlink 软链接: 删除软链接;
 
+### CentOS 7.9 内核升级到 3.10.0-1160.90.1.el7
+- 查看服务器内核版本: uname -r;
+- 下载 kernel-3.10.0-1160.90.1.el7.x86_64.rpm 并上传:
+```
+scp ./kernel-3.10.0-1160.90.1.el7.x86_64.rpm irteam@domain.xxx:~
+```
+- 进入服务器, 安装内核:
+```
+sudo rpm -ivh kernel-3.10.0-1160.90.1.el7.x86_64.rpm
+```
+- 设置新内核为默认启动项:
+```
+sudo grub2-set-default 0
+/*
+* 如果发生 sudo: grub2-set-default: command not found
+* 尝试使用以下命令: 
+* sudo /usr/sbin/grub2-set-default 0
+*/
+```
+- 更新引导:
+```
+sudo grub2-mkconfig -o /boot/grub2/grub.cfg
+
+/*
+* 如果发生 sudo: grub2-mkconfig: command not found
+* 尝试使用以下命令: 
+* sudo /usr/sbin/grub2-mkconfig -o /boot/grub2/grub.cfg
+*/
+```
+- 重启系统:
+```
+sudo reboot
+
+/*
+* 如果发生 sudo: reboot: command not found
+* 尝试使用以下命令: 
+* sudo /sbin/reboot
+*/
+```
+- 清除 pm2 缓存:
+```
+rm ~/.pm2/dump.pm2 && pm2 list
+```
+
 ### vim 命令相关
 - touch fileA: 如果fileA存在, 更改这个文件或目录的日期时间, 否则在当前目录下新建一个空白文件fileA;
 - vim .test: 创建一个隐藏文件;
