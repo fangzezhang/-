@@ -24,6 +24,7 @@
 - git remote remove origin: 删除已存在的 "origin" 远程仓库;
 - git branch -d XXX: 删除本地分支;
 - git push origin -d XXX: 删除远程分支;
+- git revert <commit-SHA>: 回滚到某个commit;
 
 ### 查看 git 安装位置
 - where git: windows 查看 git 安装位置;
